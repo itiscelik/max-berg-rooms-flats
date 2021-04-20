@@ -94,6 +94,17 @@ a:hover {
     z-index: 2;
 }
 
+/* Landing Page */
+
+.landing {
+    height: 700px;
+    font-family: 'Courier New', monospace;
+    background: #ff8443;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
 /* ABOUT US SECTION */
 
 #aboutUs h5 {
@@ -116,8 +127,8 @@ a:hover {
 }
 
 #aboutUs .fas:hover {
-    color:#ff8443;
-    border-color:#ff8443;
+    color: #ff8443;
+    border-color: #ff8443;
     transition: .5s;
 }
 
@@ -474,13 +485,13 @@ footer h4 {
 }
 
 .contact-card-address i:hover {
-    color:white;
+    color: white;
 }
 
 .contact-card-phone i:hover {
-    color:#ff8443;
+    color: #ff8443;
 }
 
 .contact-card-email i:hover {
-    color:white;
+    color: white;
 }
