@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Pricing | Max-Berg Rooms & Flats in Istanbul</title>
+    <title>Contact | Max-Berg Rooms & Flats in Istanbul</title>
 </head>
 
 <body>
     <!-- NAVBAR AREA -->
-    <div class="container sticky-top mt-1" id="navigationBarEn">
+    <div class="container sticky-top mt-1" id="navigationBarDe">
         <nav class="navbar navbar-expand">
-            <a class="navbar-brand ml-1" href="index.html#navigationBarEn">
+            <a class="navbar-brand ml-1" href="index-de.html#navigationBarDe">
                 <img src="img/logo.png" width="120" height="120" style="float:left;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -33,22 +33,22 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html#navigationBarEn">Home</a>
+                        <a class="nav-link" href="index-de.html#navigationBarDe">Startseite</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about-de.html">Über uns</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="flats.html">Rooms&Flats</a>
+                        <a class="nav-link" href="flats-de.html">WG</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pricing.html"><strong>Pricing</strong></a>
+                        <a class="nav-link" href="pricing-de.html">Preisgestaltung</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact-de.html"><strong>Kontakt</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index-de.html#landingPageDe"><img src="img/german.jpg" style="width:20px; height:20px;"></a>
+                        <a class="nav-link" href="index.html#landingPageEn"><img src="img/english.png" style="width:20px; height:20px;"></a>
                     </li>
                 </ul>
             </div>
@@ -56,88 +56,92 @@
     </div>
     <!-- END NAVBAR -->
 
+    <!-- CONTACT BODY SECTION -->
     <div class="container mt-2">
-        <div class="row text-center">
-            <div class="pricing-header p-5 pb-md-4 mx-auto text-center">
-                <p style="font-size: 25px;">Find your home <span style="font-size: 35px; letter-spacing: 2px; color: #ff8443">within seconds</span></p>
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <section id="contactUs">
+                    <form action="/iletisim" method="post">
+                        <div class="form-group">
+                            <label for="name" class="iletisimLabel">Name und Nachname</label>
+                            <input type="text" class="form-control" id="contact-name" placeholder="Name und Nachname"
+                                name="name" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="iletisimLabel">E-Mail-Addresse</label>
+                            <input type="email" class="form-control" id="contact-email" placeholder="E-Mail-Addresse"
+                                name="email" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="tel" class="iletisimLabel">Mobile</label>
+                            <input type="tel" class="form-control" id="contact-tel" placeholder="Mobile" name="tel"
+                                required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="iletisimLabel">Text</label>
+                            <textarea class="form-control" rows="5" id="contact-message" placeholder="Text"
+                                name="message"></textarea>
+                        </div>
+                        <input type="submit" value="Senden" name="submit" class="btn btn-primary">
+                    </form>
+                </section>
             </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="card rounded-3 shadow-sm">
-                    <div class="card-header">
-                        <h4 class="my-0 fw-normal">Rent Room</h4>
-                        <h1 class="card-title pricing-card-title">€195<small class="text-muted fw-light">/mo</small>
-                        </h1>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled mt-2 mb-2">
-                            <li>*Single room from €195</li>
-                            <li>*Double room from €225</li>
-                            <li>*Cosy Apartment</li>
-                            <li>*Secure Neighborhood</li>
-                        </ul>
-                        <div class="row">
-                            <div class="col-2"></div>
-                            <div class="col-8">
-                                <button type="button" class="w-100 btn btn-lg btn-primary">Rent Room <i
-                                        class="fa fa-credit-card" aria-hidden="true"></i></button>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <section id="contactUs">
+                    <div class="contact-card-outer">
+                        <div class="contact-card-address pt-2">
+                            <div class="row">
+                                <div class="col-2 pl-4">
+                                    <i class="fas fa-route mb-2"></i>
+                                </div>
+                                <div class="col-10">
+                                    <h5 class="text-muted" style="float: left;">Adresse:</h5>
+                                </div>
                             </div>
-                            <div class="col-2"></div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p class="text-muted pl-2">Kadıköy/ISTANBUL</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-card-phone pt-2">
+                            <div class="row">
+                                <div class="col-2 pl-4">
+                                </div>
+                                <div class="col-10">
+                                    <h5 class="text-muted" style="float: left;"></h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="" class="text-muted pl-2"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-card-email pt-2">
+                            <div class="row">
+                                <div class="col-2 pl-4">
+                                    <i class="fas fa-envelope mb-2"></i>
+                                </div>
+                                <div class="col-10">
+                                    <h5 class="text-white" style="float: left;">Email:</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="mailto:info@maxbergistanbul.co" class="text-white pl-2">info@maxbergistanbul.co</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="card rounded-3 shadow-sm">
-                    <div class="card-header">
-                        <h4 class="my-0 fw-normal">Rent Flat</h4>
-                        <h1 class="card-title pricing-card-title">€650<small class="text-muted fw-light">/mo</small>
-                        </h1>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled mt-2 mb-2">
-                            <li>**Max of 3 flatmates</li>
-                            <li>**Cleaning support</li>
-                            <li>**Free towel</li>
-                            <li>**Secure Neighborhood</li>
-                        </ul>
-                        <div class="row">
-                            <div class="col-2"></div>
-                            <div class="col-8">
-                                <button type="button" class="w-100 btn btn-lg btn-primary">Rent Flat <i
-                                        class="fa fa-credit-card" aria-hidden="true"></i></button>
-                            </div>
-                            <div class="col-2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="card rounded-3 shadow-sm">
-                    <div class="card-header">
-                        <h4 class="my-0 fw-normal">Reserve Early</h4>
-                        <h1 class="card-title pricing-card-title">Save %5<small class="text-muted fw-light">/mo</small>
-                        </h1>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled mt-2 mb-2">
-                            <li>***Book a room 30 days before and save %5 per month</li>
-                            <li>***Book flat 30 days before and save %10 first months per person</li>
-                        </ul>
-                        <div class="row">
-                            <div class="col-2"></div>
-                            <div class="col-8">
-                                <button type="button" class="w-100 btn btn-lg btn-primary">Reserve Early <i
-                                        class="fa fa-credit-card" aria-hidden="true"></i></button>
-                            </div>
-                            <div class="col-2"></div>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>
+
+
+    <script type="text/javascript" src="/js/captcha.js"></script>
+    <!-- CONTACT BODY SECTION -->
 
     <!-- FOOTER -->
     <div class="container mt-5">
@@ -146,27 +150,27 @@
                 <div class="row footerRow">
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 text-white">
                         <h4>Max Berg Rooms & Flats</h4>
-                        <p>We love what we do for exchange students in Istanbul. For over 7 years, we have been helping exchange students around the world to transform experience by finding effective accommodation with the use of friendship.</p>
+                        <p>Wir lieben, was wir für Austauschstudenten in Istanbul tun. Seit über 7 Jahren unterstützen wir Austauschstudenten auf der ganzen Welt dabei, Erfahrungen zu transformieren, indem wir mithilfe von Freundschaft eine effektive Unterkunft finden.</p>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 text-white">
-                        <h4>Rooms & Flats</h4>
+                        <h4>Zimmer & Wohnungen</h4>
                         <ul class="pl-0">
                             <a href="flats.html">
-                                <li>Rooms & Flats in Asian Side</li>
+                                <li>Zimmer & Wohnungen auf dem Asiatischen Kontinent</li>
                             </a>
                             <a href="flats.html">
-                                <li>Rooms & Flats in European Side</li>
+                                <li>Zimmer & Wohnungen auf Europäischem Kontinent</li>
                             </a>
                             <a href="pricing.html">
-                                <li>Pricing</li>
+                                <li>Preisgestaltung</li>
                             </a>
                             <a href="contact.html">
-                                <li>Contact</li>
+                                <li>Kontakt</li>
                             </a>
                         </ul>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 contactArea">
-                        <h4>Contact</h4>
+                        <h4>Kontakt</h4>
                         <i class="fas fa-map"></i>
                         <p class="text-left"> Kadıköy/ISTANBUL</p>
                         <i class="fas fa-envelope"></i><a href="mailto:info@maxbergistanbul.co">
@@ -177,13 +181,13 @@
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="row">
                             <div class="col-12">
-                                <p>Copyright © 2014 - 2021</p>
+                                <p>Urheberrechte © 2014 - 2021</p>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12">
-                                <p>All rights reserved</p>
+                                <p>Alle Rechte vorbehalten</p>
                             </div>
                         </div>
                     </div>
