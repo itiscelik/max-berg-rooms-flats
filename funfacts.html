@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Fun Facts | Max-Berg Rooms & Flats in Istanbul</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR AREA -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top mt-1">
+        <div class="container" id="navigationBarDe">
+            <a class="navbar-brand" href="index-de.html#navigationBarDe">
+                <img src="img/logo.png" width="120" height="120" style="float:left;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index-de.html#navigationBarDe">Startseite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-de.html">Über uns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="flats-de.html">Zimmer&Wohnungen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing-de.html">Preisgestaltung</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="funfacts.html"><strong>Fun Facts</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-de.html">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index-de.html#navigationBarDe"><img src="img/german.jpg"
+                                style="width:20px; height:20px;"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h5>What to do or where to go?</h5><br>
+                <h6>(Answers are below the wheel)</h6>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+
+                <div id="chart"></div>
+                <div id="question">
+                    <h1></h1>
+                </div>
+
+                <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+                <script type="text/javascript" charset="utf-8">
+                    var padding = {
+                            top: 5,
+                            right: 5,
+                            bottom: 5,
+                            left: 5
+                        },
+                        w = 500 - padding.left - padding.right,
+                        h = 500 - padding.top - padding.bottom,
+                        r = Math.min(w, h) / 2,
+                        rotation = 0,
+                        oldrotation = 0,
+                        picked = 100000,
+                        oldpick = [],
+                        color = d3.scale.category20();
+
+                    var data = [{
+                            "label": "Topkapı Palace",
+                            "value": 1,
+                            "question": "Go to Topkapı Palace"
+                        },
+                        {
+                            "label": "Blue Mosque",
+                            "value": 1,
+                            "question": "Go to Blue Mosque"
+                        },
+                        {
+                            "label": "Fly to Adana",
+                            "value": 1,
+                            "question": "Fly to Adana if It Is April"
+                        },
+                        {
+                            "label": "Bebek Beach",
+                            "value": 1,
+                            "question": "Run by Bebek Beach"
+                        },
+                        {
+                            "label": "Çamlıca Mosque",
+                            "value": 1,
+                            "question": "Go to Çamlıca Mosque"
+                        },
+                        {
+                            "label": "Kuzguncuk",
+                            "value": 1,
+                            "question": "Take a Selfie in Kuzguncuk"
+                        },
+                        {
+                            "label": "Modern Art Museum",
+                            "value": 1,
+                            "question": "Discover Modern Art Museum"
+                        },
+                        {
+                            "label": "Cappadocia Tours",
+                            "value": 1,
+                            "question": "Wake Up Early and Follow Sunrise in Cappadocia"
+                        },
+                        {
+                            "label": "Galata Tower",
+                            "value": 1,
+                            "question": "Book Your Ticket for Galata Tower"
+                        },
+                        {
+                            "label": "İstiklal Street",
+                            "value": 1,
+                            "question": "Visit Ancient Shops on İstiklal Street"
+                        },
+                        {
+                            "label": "Grand Bazaar",
+                            "value": 1,
+                            "question": "Buy Spices from Grand Bazaar"
+                        },
+                        {
+                            "label": "Maiden Tower",
+                            "value": 1,
+                            "question": "Drink Tea nearby Maiden Tower"
+                        },
+                        {
+                            "label": "Go to Antalya",
+                            "value": 1,
+                            "question": "Belek or Kaş are The Best Spots in Antalya"
+                        },
+                        {
+                            "label": "Hamam",
+                            "value": 1,
+                            "question": "Must Have a Hot Bath in Hamam"
+                        },
+                        {
+                            "label": "Hagia Sophia",
+                            "value": 1,
+                            "question": "Go to Hagia Sophia"
+                        },
+                        {
+                            "label": "Beşiktaş Stadium",
+                            "value": 1,
+                            "question": "Take the Honor Tour at Beşiktaş Stadium"
+                        },
+                        {
+                            "label": "Ski at Uludağ",
+                            "value": 1,
+                            "question": "Ski at Uludağ if It Is Snowy, Bursa"
+                        },
+                        {
+                            "label": "Süleymaniye Mosque",
+                            "value": 1,
+                            "question": "Go to Süleymaniye Mosque on Friday"
+                        },
+                        {
+                            "label": "Adana",
+                            "value": 1,
+                            "question": "Go to The Capital of Kebap, Adana"
+                        },
+                        {
+                            "label": "Caddecostan",
+                            "value": 1,
+                            "question": "Walk Through Caddecostan"
+                        },
+                        {
+                            "label": "Book Eastern Express",
+                            "value": 1,
+                            "question": "Eastern Express Train is So Popular to Spend 2 Weeks"
+                        },
+                        {
+                            "label": "Metet Döner",
+                            "value": 1,
+                            "question": "Eat Döner at Metet Döner, Kuzguncuk"
+                        },
+                        {
+                            "label": "Moda Beach",
+                            "value": 1,
+                            "question": "Do Yoga with Friends on Moda Beach"
+                        },
+                        {
+                            "label": "Fly to Fethiye",
+                            "value": 1,
+                            "question": "Fly to Fethiye if It Is April"
+                        },
+                        {
+                            "label": "Camp around Mountains",
+                            "value": 1,
+                            "question": "Bring Your Camping Equipments to Trabzon Mountains"
+                        },
+                        {
+                            "label": "Cevahir Shopping Mall",
+                            "value": 1,
+                            "question": "Buy Gifts at Cevahir Shopping Mall"
+                        },
+                        {
+                            "label": "Anıtkabir Moseleum",
+                            "value": 1,
+                            "question": "Go to Anıtkabir Moseleum by Train, Ankara"
+                        },
+                        {
+                            "label": "Princes' Islands",
+                            "value": 1,
+                            "question": "Go by Ferry to Princes' Islands"
+                        },
+                        {
+                            "label": "Ciğerci Hulusi",
+                            "value": 1,
+                            "question": "Eat Kebap or Ciğer at Ciğerci Hulusi"
+                        },
+                        {
+                            "label": "Eminönü-->Bebek",
+                            "value": 1,
+                            "question": "Walk from Eminönü to Bebek on coast"
+                        },
+                        {
+                            "label": "Orange Blossom Festival",
+                            "value": 1,
+                            "question": "Atten to Orange Blossom Festival if It Is April, Adana"
+                        },
+                        {
+                            "label": "Mesopotamian Tour",
+                            "value": 1,
+                            "question": "Feel the Mesopotamian Vibes in Mardin"
+                        }
+                    ];
+
+                    var svg = d3.select('#chart')
+                        .append("svg")
+                        .data([data])
+                        .attr("width", w + padding.left + padding.right)
+                        .attr("height", h + padding.top + padding.bottom);
+
+                    var container = svg.append("g")
+                        .attr("class", "chartholder")
+                        .attr("transform", "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) +
+                            ")");
+
+                    var vis = container
+                        .append("g");
+
+                    var pie = d3.layout.pie().sort(null).value(function (d) {
+                        return 1;
+                    });
+
+                    // declare an arc generator function
+                    var arc = d3.svg.arc().outerRadius(r);
+
+                    // select paths, use arc generator to draw
+                    var arcs = vis.selectAll("g.slice")
+                        .data(pie)
+                        .enter()
+                        .append("g")
+                        .attr("class", "slice");
+
+
+                    arcs.append("path")
+                        .attr("fill", function (d, i) {
+                            return color(i);
+                        })
+                        .attr("d", function (d) {
+                            return arc(d);
+                        });
+
+                    // add the text
+                    arcs.append("text").attr("transform", function (d) {
+                            d.innerRadius = 0;
+                            d.outerRadius = r;
+                            d.angle = (d.startAngle + d.endAngle) / 2;
+                            return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -
+                                10) + ")";
+                        })
+                        .attr("text-anchor", "end")
+                        .text(function (d, i) {
+                            return data[i].label;
+                        });
+
+                    container.on("click", spin);
+
+                    function spin(d) {
+
+                        container.on("click", null);
+
+                        //all slices have been seen, all done
+                        console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
+                        if (oldpick.length == data.length) {
+                            console.log("done");
+                            container.on("click", null);
+                            return;
+                        }
+
+                        var ps = 360 / data.length,
+                            pieslice = Math.round(1440 / data.length),
+                            rng = Math.floor((Math.random() * 1440) + 360);
+
+                        rotation = (Math.round(rng / ps) * ps);
+
+                        picked = Math.round(data.length - (rotation % 360) / ps);
+                        picked = picked >= data.length ? (picked % data.length) : picked;
+
+
+                        if (oldpick.indexOf(picked) !== -1) {
+                            d3.select(this).call(spin);
+                            return;
+                        } else {
+                            oldpick.push(picked);
+                        }
+
+                        rotation += 90 - Math.round(ps / 2);
+
+                        vis.transition()
+                            .duration(3000)
+                            .attrTween("transform", rotTween)
+                            .each("end", function () {
+
+                                //mark question as seen
+                                d3.select(".slice:nth-child(" + (picked + 1) + ") path")
+                                    .attr("fill", "#111");
+
+                                //populate question
+                                d3.select("#question h1")
+                                    .text(data[picked].question);
+
+                                oldrotation = rotation;
+
+                                container.on("click", spin);
+                            });
+                    }
+
+                    //make arrow
+                    svg.append("g")
+                        .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h / 2) +
+                            padding.top) + ")")
+                        .append("path")
+                        .attr("d", "M-" + (r * .15) + ",0L0," + (r * .05) + "L0,-" + (r * .05) + "Z")
+                        .style({
+                            "fill": "black"
+                        });
+
+                    //draw spin circle
+                    container.append("circle")
+                        .attr("cx", 0)
+                        .attr("cy", 0)
+                        .attr("r", 60)
+                        .style({
+                            "fill": "white",
+                            "cursor": "pointer"
+                        });
+
+                    //spin text
+                    container.append("text")
+                        .attr("x", 0)
+                        .attr("y", 15)
+                        .attr("text-anchor", "middle")
+                        .text("TURN")
+                        .style({
+                            "font-weight": "bold",
+                            "font-size": "30px"
+                        });
+
+                    function rotTween(to) {
+                        var i = d3.interpolate(oldrotation % 360, rotation);
+                        return function (t) {
+                            return "rotate(" + i(t) + ")";
+                        };
+                    }
+
+                    function getRandomNumbers() {
+                        var array = new Uint16Array(1000);
+                        var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
+
+                        if (window.hasOwnProperty("crypto") && typeof window.crypto.getRandomValues ===
+                            "function") {
+                            window.crypto.getRandomValues(array);
+                            console.log("works");
+                        } else {
+                            //no support for crypto, get crappy random numbers
+                            for (var i = 0; i < 1000; i++) {
+                                array[i] = Math.floor(Math.random() * 100000) + 1;
+                            }
+                        }
+
+                        return array;
+                    }
+                </script>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="container mt-5">
+        <footer class="bg-light">
+            <div class="container">
+                <div class="row footerRow">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 text-white">
+                        <h4>Max Berg Rooms & Flats</h4>
+                        <p>We love what we do for exchange students in Istanbul. For over 7 years, we have been
+                            helping exchange students around the world to collect experience by finding effective
+                            accommodation with the use of friendship.</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 text-white">
+                        <h4>Rooms & Flats</h4>
+                        <ul class="pl-0">
+                            <a href="flats.html">
+                                <li>Rooms & Flats in Asian Side</li>
+                            </a>
+                            <a href="flats.html">
+                                <li>Rooms & Flats in European Side</li>
+                            </a>
+                            <a href="pricing.html">
+                                <li>Pricing</li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 text-white">
+                        <h4>Fun Facts</h4>
+                        <a href="funfacts.html">
+                            <li>Fun Facts</li>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 contactArea">
+                        <h4>Contact</h4>
+                    <a href="contact.html">
+                        <li>Contact Form</li>
+                    </a>
+                    <p>
+                        <i class="fas fa-envelope"></i><a href="mailto:info@maxbergistanbul.co">
+                            Text Us</a>
+                    </p>
+                    <p class="text-left"><i class="fas fa-map"></i>
+                        Kadıköy/ISTANBUL
+                   </p>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Copyright © 2014 - 2021</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p>All rights reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 socialIcons text-center">
+                        <a href="https://www.facebook.com/maxbergistanbul"><i class="fab fa-facebook-square"
+                                target="_blank"></i></a>
+                        <a href="https://www.instagram.com/maxbergistanbul/"><i class="fab fa-instagram"
+                                target="_blank"></i></a>
+                        <a href="https://open.spotify.com/user/403go7q0p2q4mjnlp6faug9bj?si=ed5129959f894972"><i
+                                class="fab fa-spotify"></i></a>
+                        <a href="mailto:info@maxbergistanbul.co"><i class="fas fa-envelope" target="_blank"></i></a>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <img src="img/logo.png" width="80" height="80" style="float:right;">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- END FOOTER -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="/js/popper.min.js"></script>
+
+    <script type="text/javascript" src="/js/fontawesome.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+</body>
+
+</html>
