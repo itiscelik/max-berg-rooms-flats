@@ -135,6 +135,79 @@
         </div>
     </div>
 
+    <!-- STARTS CALCULATOR -->
+    <div class="container">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-xl-12 col-xs-12">
+            <div class="table">
+                <div class="row">
+                    <div class="col-9 calculatorButton">
+                        <input id="result" type="text" class="screen" placeholder="Berechnen Sie Ihr Budget innerhalb von Sekunden" disabled>
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="Löschen" onclick="clearScreen()" class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="1" onclick="display('1')" class="number">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="2" onclick="display('2')" class="number">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="3" onclick="display('3')" class="number">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="/" onclick="display('/')" class="operator">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="4" onclick="display('4')" class="number">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="5" onclick="display('5')" class="number">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="6" onclick="display('6')" class="number">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="-" onclick="display('-')" class="operator">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="7" onclick="display('7')" class="number">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="8" onclick="display('8')" class="number">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="9" onclick="display('9')" class="number">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="+" onclick="display('+')" class="operator">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="." onclick="display('.')" class="decimal">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="0" onclick="display('0')" class="number">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="=" onclick="solve()" class="equal">
+                    </div>
+                    <div class="col-3 calculatorButton">
+                        <input type="button" value="*" onclick="display('*')" class="operator">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ENDS CALCULATOR -->
+
     <!-- FOOTER -->
     <div class="container mt-5">
         <footer class="bg-light">
@@ -211,6 +284,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="app.js"></script>
     <script src="/js/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="/js/popper.min.js"></script>
 

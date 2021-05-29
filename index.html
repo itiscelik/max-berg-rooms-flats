@@ -161,6 +161,7 @@
                         style="font-size: 35px; letter-spacing: 2px; color: #ff8443">HOME</span></p>
             </div>
         </div>
+
         <div class="row">
             <div class="col-5"></div>
             <div class="col-2">
@@ -352,8 +353,10 @@
                                         7 years, we have been helping exchange students around the world to collect
                                         experience by finding effective accommodation with the use of friendship.
                                     </p>
-                                    <a href="about.html" class="btn btn-lg btn-primary mt-5 pb-2"
+                                    <!-- STARTS REACT -->
+                                    <a href="about.html" id="like_button_container" class="btn btn-lg btn-primary mt-5 pb-2"
                                         style="background-color: white; color:black;">Our Story</a>
+                                    <!-- ENDS REACT -->
                                 </div>
                             </div>
                         </div>
@@ -595,16 +598,16 @@
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 contactArea">
                             <h4>Contact</h4>
-                        <a href="contact.html">
-                            <li>Contact Form</li>
-                        </a>
-                        <p>
-                            <i class="fas fa-envelope"></i><a href="mailto:info@maxbergistanbul.co">
-                                Text Us</a>
-                        </p>
-                        <p class="text-left"><i class="fas fa-map"></i>
-                            Kadıköy/ISTANBUL
-                       </p>
+                            <a href="contact.html">
+                                <li>Contact Form</li>
+                            </a>
+                            <p>
+                                <i class="fas fa-envelope"></i><a href="mailto:info@maxbergistanbul.co">
+                                    Text Us</a>
+                            </p>
+                            <p class="text-left"><i class="fas fa-map"></i>
+                                Kadıköy/ISTANBUL
+                            </p>
                         </div>
                     </div>
                     <div class="row mt-1">
@@ -654,6 +657,15 @@
         <script type="text/javascript" src="/js/bootstrap.js"></script>
         <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
         <script type="text/javascript" src="/js/main.js"></script>
+
+        <!-- React'i yükle. -->
+        <!-- Not: yayınlama için hazırlanırken,  "development.js" yi "production.min.js" ile değiştirin -->
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+        <!-- React bileşenimizi yükleyin. -->
+        <script src="like_button.js"></script>
+
 </body>
 
 </html>
